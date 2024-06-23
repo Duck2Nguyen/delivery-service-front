@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const provinceApi = axios.create({
-  baseURL: "https://delivery-service.site/api",
+  baseURL: "https://province-api.site//api",
   headers: {
     "Content-type": "application/json",
     "Access-Control-Allow-Origin": "*",
