@@ -10,7 +10,7 @@ import axios from "axios";
 // });
 
 const api = axios.create({
-  baseURL: "//delivery-service-api.site:8081/api/",
+  baseURL: "http://delivery-service-api.site:8081/api/",
   headers: {
     "Content-type": "application/json",
   },
