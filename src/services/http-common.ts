@@ -10,7 +10,7 @@ import axios from "axios";
 // });
 
 const api = axios.create({
-  baseURL: "http://localhost:8081/api/",
+  baseURL: "http://34.142.165.57:8081/api/",
   headers: {
     "Content-type": "application/json",
   },
