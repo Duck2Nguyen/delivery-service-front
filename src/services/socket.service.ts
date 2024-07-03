@@ -4,7 +4,7 @@ import SockJS from "sockjs-client";
 const stompClient = Stomp.over(
   () =>
     // new SockJS("https://delivery-service-7elcupesca-uc.a.run.app/api/socket")
-    new SockJS("http://34.142.165.57:8081/api/socket")
+    new SockJS("https://delivery-service-api.site:8081/api/socket")
 );
 
 stompClient.reconnect_delay = 5000;
