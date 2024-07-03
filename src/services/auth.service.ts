@@ -14,7 +14,7 @@ class AuthService {
 
   async login(user?: LoginRegisterForm): Promise<ResponseReceived<UserLogged>> {
     return httpCommon
-      .post<ResponseReceived<UserLogged>>("auth/login", user, {
+      .post<ResponseReceived<UserLogged>>("/auth/login", user, {
         headers: {
           Authorization: null,
         },
@@ -26,7 +26,7 @@ class AuthService {
     registerForm: LoginRegisterForm
   ): Promise<ResponseReceived<UserLogged>> {
     return httpCommon
-      .post<ResponseReceived<UserLogged>>("auth/register", registerForm)
+      .post<ResponseReceived<UserLogged>>("/auth/register", registerForm)
       .then();
   }
 
