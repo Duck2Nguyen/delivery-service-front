@@ -1,16 +1,8 @@
-// import { UserLogged } from "@Common/types";
 import { store } from "@App/store";
 import axios from "axios";
-// https://delivery-system.onrender.com
-// const api = axios.create({
-//   baseURL: "https://delivery-service-7elcupesca-uc.a.run.app/api/",
-//   headers: {
-//     "Content-type": "application/json",
-//   },
-// });
 
 const api = axios.create({
-  baseURL: "http://delivery-service-api.site:8081/api/",
+  baseURL: "http://34.142.174.8:8081/api/",
   headers: {
     "Content-type": "application/json",
   },
