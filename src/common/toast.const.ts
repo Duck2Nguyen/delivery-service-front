@@ -27,6 +27,7 @@ export const message = {
   UPDATE_ACCOUNT_SUCCESSFUL: "Cập nhật thông tin thành công",
   UPDATE_STATUS_SUCCESSFUL: "Đối soát thành công!",
   PRODUCT_DELETE_FAILED: "Xóa sản phẩm thất bại, sản phẩm đang tồn tại trong một đơn hàng ",
+  IMAGE_PASSED_INVALID: "Ảnh không hợp lệ, vui lòng kiểm tra lại",
 };
 
 export const status: { [key: string]: AlertColor | undefined } = {
@@ -72,6 +73,12 @@ export const ProductToastPayload: {
   4002: {
     open: true,
     message: message.PRODUCT_DELETE_FAILED,
+    status: status.ERROR,
+  },
+
+  4003: {
+    open: true,
+    message: message.IMAGE_PASSED_INVALID,
     status: status.ERROR,
   },
 
