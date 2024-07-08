@@ -28,6 +28,7 @@ import Tab from '@mui/material/Tab';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link, useNavigate } from 'react-router-dom';
 import shopService from '@Services/shop.service';
+import provinceService from '@Services/province.service';
 
 const theme = createTheme({
   palette: {
@@ -303,14 +304,25 @@ export function BasicTabs() {
         const res2 = await shopService.getShopByStatus("ACCEPTED");
         const map2 = new Map();
         arr = [];
-        res2.data.map((item: any) => {
-          map2.set(item.id, false)
-          arr.push({
-            id: item.id,
-            shopName: item.account.name,
-            address: item.addresses.leng > 0 ? item.addresses[0].addressDetail : "",
-            phoneNumber: item.account.phoneNumber
-          })
+        res2.data.map(async(item: any) => {
+          if(item && item.addresses && item.addresses.length > 0) {
+            const addressText: any = await provinceService.getAddress(item.addresses[0]);
+            map2.set(item.id, false)
+            arr.push({
+              id: item.id,
+              shopName: item.account.name,
+              address: addressText || "",
+              phoneNumber: item.account.phoneNumber
+            })
+          }else{
+            map2.set(item.id, false)
+            arr.push({
+              id: item.id,
+              shopName: item.account.name,
+              address: item.addresses.leng > 0 ? item.addresses[0].addressDetail : "",
+              phoneNumber: item.account.phoneNumber
+            })
+          }
         })
         setOriginData2(arr);
         setData2(arr);
