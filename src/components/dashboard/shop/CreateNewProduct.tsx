@@ -46,7 +46,7 @@ function CreateNewProduct() {
   // console.log(useWatch({ name: "image" }));
 
   const handleSubmitForm: SubmitHandler<ProductSaveForm> = async (values) => {
-    if (!values.image) {
+    if (!values.image.length) {
       dispatch(openToast(ProductToastPayload[4003]));
       return;
     }
